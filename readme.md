@@ -2,7 +2,7 @@
 
 # Call of Duty 2 - Shaders
 
-[![CoD2 Shader](CoD2_Shader.png)](https://www.youtube.com/watch?v=pG24Pw6Se_I)
+[![CoD2 Shader](CoD2_Shader.jpg)](https://www.youtube.com/watch?v=pG24Pw6Se_I)
 
 ---
 
@@ -45,7 +45,7 @@ Open up your asset manager (`CoD2/bin)` and create a new ___material___ entry na
 
 everything else can stay default. Export your material.
 
-![Asset Manager](assetmanager.png)
+![Asset Manager](assetmanager.PNG)
 
 Some entries in the template and the following techniquesets/techniques files are probably not neccessarily needed, however it worked with these ones. I didn't want to waste time on undocumented CoD specific formats, I am more interested in the actual shading part, so lets set up just this.
 
