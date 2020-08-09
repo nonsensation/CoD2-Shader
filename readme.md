@@ -49,6 +49,8 @@ everything else can stay default. Export your material.
 
 Some entries in the template and the following techniquesets/techniques files are probably not neccessarily needed, however it worked with these ones. I didn't want to waste time on undocumented CoD specific formats, I am more interested in the actual shading part, so lets set up just this.
 
+## For your iwd file
+
 Create `CoD2/your_mod_folder/materials/techniquesets/skin.techset`:
 ```
 "fakelight normal":
@@ -223,3 +225,8 @@ Remember to put everyting in your iwd container:
 	- techniquesets/skin.techset
 	- mtl_weapon_kar98
 
+---
+
+## TODO
+
+When in DX7 mode the engine complains it cannot find `skin.tech` or something like that. You might need to copy a simple technique from `materials_dx7/` and rename it. 
