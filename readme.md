@@ -1,6 +1,15 @@
 
+
 # Call of Duty 2 - Shaders
 
+[![CoD2 Shader](CoD2_Shader.png)](https://www.youtube.com/watch?v=pG24Pw6Se_I)
+
+---
+
+I got all this information from xoxor4d, he does amazing stuff for CoD4: [xoxor4d.github.io](https://xoxor4d.github.io/tutorials/hlsl-intro/)
+Just wated to see if this also works in CoD2... it does.
+
+---
 
 Call of Duty 2 uses two rendering engines -- DirectX 7 and DirectX 9 and shaders are only supported in DX9.
 So you are already using DX9, or force your players to do so (`r_rendererPreference "dx9"` -- can cause crashes while witching). Otherwise shaders have no effect and aren't visible.
@@ -36,7 +45,7 @@ Open up your asset manager (`CoD2/bin)` and create a new ___material___ entry na
 
 everything else can stay default. Export your material.
 
-TODO: IMG
+![Asset Manager](assetmanager.png)
 
 Some entries in the template and the following techniquesets/techniques files are probably not neccessarily needed, however it worked with these ones. I didn't want to waste time on undocumented CoD specific formats, I am more interested in the actual shading part, so lets set up just this.
 
