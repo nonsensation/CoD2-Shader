@@ -104,6 +104,8 @@ These states all reference the _skin technique_, so create it as well: `CoD2/you
 ```
 Here the actual HLSL shaders are referenced. Make sure to use version 2.0, as with version 1.1 there are even more limitations to fight against.
 
+**It seems like version 3.0 also works**
+
 Now to the actual fun part, the shader. Create `CoD2/your_mod_folder/materials/shader/skin.hlsl`:
 
 ```
@@ -230,3 +232,10 @@ Remember to put everyting in your iwd container:
 ## TODO
 
 When in DX7 mode the engine complains it cannot find `skin.tech` or something like that. You might need to copy a simple technique from `materials_dx7/` and rename it. 
+
+## More Examples
+
+[![Gold Skin](shot0001.jpg)](https://www.youtube.com/watch?v=ytzlJPm78Us)
+[![Sky](shot0008.jpg)](https://www.youtube.com/watch?v=4rypaoLijeM)
+
+
