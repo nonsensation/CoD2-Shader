@@ -20,7 +20,7 @@ That being said, lets start.
 
 ## Asset Manager
 
-Create a new file `CoD2/deffiles/materials/skin.template`:
+A minimalistic _template_ file looks like this (`CoD2/deffiles/materials/skin.template`):
 ```
 refImage( "$colorMap$" );
 
@@ -37,10 +37,14 @@ textureTable
 		"@formatColor@" : "colorMap";
 }
 ```
+However, this only allows for a single shader to be created. You would have to create each file (also _templates_) for each different material over and over again.
+Therefore, lets use a more flexible _template_ that can be modified with the _**string**_ field in the asset-manager.
+
 Open up your asset manager (`CoD2/bin)` and create a new ___material___ entry named `mtl_weapon_kar98` with the following properties:
 - materialType: custom
 - surfaceType: none
 - template: skin
+- string: gold
 - Color Map: a dummy _power-of-2_ image
 
 everything else can stay default. Export your material.
@@ -51,7 +55,7 @@ Some entries in the template and the following techniquesets/techniques files ar
 
 ## For your iwd file
 
-Create `CoD2/your_mod_folder/materials/techniquesets/skin.techset`:
+Create `CoD2/your_mod_folder/materials/techniquesets/skin_gold.techset`:
 ```
 "fakelight normal":
 "fakelight view":
@@ -80,9 +84,12 @@ Create `CoD2/your_mod_folder/materials/techniquesets/skin.techset`:
 "pointlight exp fog":
 "shadowcookie caster":
 "shadowcookie receiver":
-	skin;
+	skin_gold;
 ```
-These states all reference the _skin technique_, so create it as well: `CoD2/your_mod_folder/materials/techniques/skin.tech`:
+
+___TODO___ test, what is actually needed (fakelight for radiant/debug etc)
+
+These states all reference the _skin technique_, so create it as well: `CoD2/your_mod_folder/materials/techniques/skin_gold.tech`:
 
 ```
 {
@@ -92,11 +99,11 @@ These states all reference the _skin technique_, so create it as well: `CoD2/you
 	vertex.color[0] = code.color;
 	vertex.texcoord[0] = code.texcoord[0];
 
-	vertexShader 2.0 "skin.hlsl"
+	vertexShader 2.0 "skin_gold.hlsl"
 	{
 	}
 
-	pixelShader 2.0 "skin.hlsl"
+	pixelShader 2.0 "skin_gold.hlsl"
 	{
 		colorMapSampler = material.colorMap;
 	}
@@ -106,7 +113,7 @@ Here the actual HLSL shaders are referenced. Make sure to use version 2.0, as wi
 
 **It seems like version 3.0 also works**
 
-Now to the actual fun part, the shader. Create `CoD2/your_mod_folder/materials/shader/skin.hlsl`:
+Now to the actual fun part, the shader. Create `CoD2/your_mod_folder/materials/shader/skin_gold.hlsl`:
 
 ```
 #define USE_DETAIL		0
@@ -222,16 +229,28 @@ In the pixel shader you can now implement your weapon skin. I took this one from
 Remember to put everyting in your iwd container:
 
 - materials
-	- shader/skin.hlsl
-	- technique/skin.tech
-	- techniquesets/skin.techset
+	- shader/skin_gold.hlsl
+	- technique/skin_gold.tech
+	- techniquesets/skin_gold.techset
 	- mtl_weapon_kar98
 
 ---
 
+## Converting Shaders from GLSL to HLSL
+
+- rename every `vec#` to `float#` (`vec3` becomes `float3`)
+- rename every `mat#` to `float#x#` (`mat3` becomes `float3x3`)
+- change some mismatching constructor arguments (`vec3( 0.0 )` becomes `float3( 0.0 , 0.0 , 0.0 )`)
+- rename functions according to: https://anteru.net/blog/2016/mapping-between-HLSL-and-GLSL/
+	- common ones are:
+	- `fract()` to `frac()`
+	- `mix()` to `lerp()`
+	- `mod()` to `fmod()`
+- adapt to the CoD2 pixelshader/vertexshader in- and output structure (`gl_FracColor` may become `fragment.color`)
+
 ## TODO
 
-When in DX7 mode the engine complains it cannot find `skin.tech` or something like that. You might need to copy a simple technique from `materials_dx7/` and rename it. 
+When in DX7 mode the engine complains it cannot find `skin_gold.tech` or something like that. You might need to copy a simple technique from `materials_dx7/` and rename it. 
 
 ## More Examples
 
