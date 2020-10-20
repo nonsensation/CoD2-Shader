@@ -2,7 +2,9 @@
 
 # Call of Duty 2 - Shaders
 
-[![CoD2 Shader](CoD2_Shader.jpg)](https://www.youtube.com/watch?v=pG24Pw6Se_I)
+## ⭐ Follow along here ⇨ https://www.youtube.com/watch?v=RoDAiozmqNc
+
+[![Gold Skin](gold.gif)](https://www.youtube.com/watch?v=RoDAiozmqNc)
 
 ---
 
@@ -254,7 +256,6 @@ When in DX7 mode the engine complains it cannot find `skin_gold.tech` or somethi
 
 ## More Examples
 
-[![Gold Skin](shot0001.jpg)](https://www.youtube.com/watch?v=ytzlJPm78Us)
 [![Sky](shot0008.jpg)](https://www.youtube.com/watch?v=4rypaoLijeM)
-
+[![CoD2 Shader](CoD2_Shader.jpg)](https://www.youtube.com/watch?v=pG24Pw6Se_I)
 
