@@ -1,10 +1,15 @@
 
 
-# Call of Duty 2 - Shaders
+<h1 align="center">Call of Duty 2 - Shaders</h1>
 
-## ⭐ Follow along here ⇨ https://www.youtube.com/watch?v=RoDAiozmqNc
+<h2 align="center">Click on the image for a YouTube Tutorial:</h2>
 
-[![Gold Skin](gold.gif)](https://www.youtube.com/watch?v=RoDAiozmqNc)
+<p align="center" >
+  <a href="https://www.youtube.com/watch?v=RoDAiozmqNc" >
+    <img src="gold.gif" width="45%" height="250px" hspace="40"/>
+    <img src="http://img.youtube.com/vi/RoDAiozmqNc/0.jpg" width="45%" height="250px" />
+  </a>
+</p>
 
 ---
 
