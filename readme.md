@@ -11,6 +11,18 @@
   </a>
 </p>
 
+<br>
+<br>
+
+<p align="center" >
+  <a href="https://www.youtube.com/watch?v=4rypaoLijeM" >
+    <img src="shot0008.jpg" width="45%" height="250px" hspace="40" />
+  </a>
+  <a href="https://www.youtube.com/watch?v=pG24Pw6Se_I" >
+    <img src="CoD2_Shader.jpg" width="45%" height="250px" />
+  </a>
+</p>
+
 ---
 
 I got all this information from xoxor4d, he does amazing stuff for CoD4: [xoxor4d.github.io](https://xoxor4d.github.io/tutorials/hlsl-intro/)
@@ -259,8 +271,4 @@ Remember to put everyting in your iwd container:
 
 When in DX7 mode the engine complains it cannot find `skin_gold.tech` or something like that. You might need to copy a simple technique from `materials_dx7/` and rename it. 
 
-## More Examples
-
-[![Sky](shot0008.jpg)](https://www.youtube.com/watch?v=4rypaoLijeM)
-[![CoD2 Shader](CoD2_Shader.jpg)](https://www.youtube.com/watch?v=pG24Pw6Se_I)
 
